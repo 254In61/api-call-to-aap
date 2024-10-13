@@ -31,6 +31,6 @@
 
     - name: Printing output
       ansible.builtin.debug: 
-        var: command_output
+        var: command_output["stdout"]
       delegate_to: localhost
       ignore_errors: true
