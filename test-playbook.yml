@@ -18,14 +18,19 @@
         msg:
           - "Variable_1 = {{ extra_var_1 }}"
           - "Variable_2 = {{ extra_var_2 }}"
-      vars:
-        ansible_host: "{{ hostname }}"
+      delegate_to: localhost
       ignore_errors: true
 
-    - name: Printing something
-      ansible.builtin.debug: 
-        msg:
-          - "End of tests tasks"
+    - name: Get python3 version
+      ansible.buitin.command:
+        cmd: "hostname && python3 --version"
       vars:
         ansible_host: "{{ hostname }}"
+      register: command_output
+      ignore_errors: true
+
+    - name: Printing output
+      ansible.builtin.debug: 
+        var: command_output
+      delegate_to: localhost
       ignore_errors: true
