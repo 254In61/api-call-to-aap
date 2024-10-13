@@ -1,7 +1,7 @@
 ---
 # Playbook to test : 1) API call to AAP 2) Extra vars
 - name: Test API Call
-  hosts: "{{ hosts_group }}" # To be tested with extra variables?
+  hosts: linux-devices # Should be in the AAP inventory or Inventory-as-code
   gather_facts: false
 
   tasks:
@@ -10,7 +10,7 @@
         msg:
           - "Confirming API works"
       vars:
-        ansible_host: "{{ hostname }}"
+        ansible_host: "{{ hostname }}"  # A value coming in from API Call
       ignore_errors: true
 
     - name: Test incoming extra variables
@@ -23,7 +23,7 @@
 
     - name: Get python3 version
       ansible.builtin.command:
-        cmd: "ls -l $HOME"
+        cmd: "{{ cmd_to_run }}"
       vars:
         ansible_host: "{{ hostname }}"
       register: command_output

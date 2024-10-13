@@ -15,8 +15,9 @@ api_url = f"{aap_url}/api/v2/job_templates/"
 extra_vars = {
     "extra_var_1": "Extra Var #1 here",
     "extra_var_2": "Extra Var #1 here",
-    "hosts_group": "192.168.1.100",
-    "hostname": "sexyguy.alpha.home"
+    # "hosts_group": "192.168.1.100",  # Ideally this will be an inventory in AAP,so fixed on the playbook..Variable will be the specific hostname
+    "hostname": "sexyguy.alpha.home",
+    "cmd_to_run": "ls -l $HOME"
 }
 
 
