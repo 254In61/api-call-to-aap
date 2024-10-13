@@ -1,7 +1,7 @@
 ---
 # Playbook to test : 1) API call to AAP 2) Extra vars
 - name: Test API Call
-  hosts: linux-devices # Should be in the AAP inventory or Inventory-as-code
+  hosts: linux # Should be in the AAP inventory or Inventory-as-code
   gather_facts: false
 
   tasks:

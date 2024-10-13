@@ -13,3 +13,11 @@
   3. Select the "Prompt on launch"
   
   4. Save the template
+
+# How-to
+
+- You will have built an inventory.. Could be inventory-as-code.
+
+- You will have the group(s) clear on the inventory. This group is what's on your playbook hosts.
+
+- The specific host is fed in as an extra vars and so is the command and any other things you want to achieve.
