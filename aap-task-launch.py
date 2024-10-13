@@ -83,9 +83,10 @@ def trigger_aap_job(job_template_id):
 
 if __name__ == "__main__":
     # Step 1: Get the job template ID by name
+    # Yet to develop and test the logic of getting job_id dynamically.
     # job_template_id = get_job_template_id()
     
-    job_template_id = 844
+    job_template_id = 36
     
     # Step 2: Start the job if the template ID was found
     if job_template_id:
