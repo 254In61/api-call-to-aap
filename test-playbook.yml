@@ -23,7 +23,7 @@
 
     - name: Get python3 version
       ansible.builtin.command:
-        cmd: "hostname && python3 --version"
+        cmd: "python3 --version"
       vars:
         ansible_host: "{{ hostname }}"
       register: command_output
