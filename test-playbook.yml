@@ -23,7 +23,7 @@
 
     - name: Get python3 version
       ansible.builtin.command:
-        cmd: "python3 --version"
+        cmd: "ls -l $HOME"
       vars:
         ansible_host: "{{ hostname }}"
       register: command_output
@@ -31,6 +31,6 @@
 
     - name: Printing output
       ansible.builtin.debug: 
-        var: command_output["stdout"]
+        var: command_output
       delegate_to: localhost
       ignore_errors: true
