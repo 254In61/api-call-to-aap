@@ -22,7 +22,7 @@
       ignore_errors: true
 
     - name: Get python3 version
-      ansible.buitin.command:
+      ansible.builtin.command:
         cmd: "hostname && python3 --version"
       vars:
         ansible_host: "{{ hostname }}"
