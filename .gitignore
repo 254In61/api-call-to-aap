@@ -1,0 +1,10 @@
+vars/test-*
+candles.md
+
+# This one MUST be here on your remote repo .ignore.
+# Why?
+# AAP runs 2 jobs on the controller host i.e project synch and inventory synch.
+# AAP will do a git pull for project synch and another git pull for inventory synch jobs
+# The 2nd git pull will fail if the log file is part of git process. Git conflicts will occur since
+# the log file would have been updated by project synch job and yet not git pushed.
+logs/ansible.log 
