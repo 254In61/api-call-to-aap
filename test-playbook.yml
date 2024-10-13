@@ -1,7 +1,7 @@
 ---
 # Playbook to test : 1) API call to AAP 2) Extra vars
 - name: Test API Call
-  hosts: localhost  # To be tested with extra variables?
+  hosts: "{{ hosts_group }}" # To be tested with extra variables?
   gather_facts: false
 
   tasks:
