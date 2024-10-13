@@ -16,8 +16,12 @@
 
 # How-to
 
-- You will have built an inventory.. Could be inventory-as-code.
+- You would have built the organization, credential and project AAP objects.
 
-- You will have the group(s) clear on the inventory. This group is what's on your playbook hosts.
+- You would have built an inventory.. Could be inventory-as-code.
+
+- You would have built your job-template AAP object..It will have the right machine credential attached and the right inventory.
+
+- Your playbook 'hosts' will be reffering to a group that is contained in the inventory above and also the group has the target hosts underneath it.
 
 - The specific host is fed in as an extra vars and so is the command and any other things you want to achieve.
