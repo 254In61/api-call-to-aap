@@ -1,7 +1,7 @@
 ---
 # Playbook to test : 1) API call to AAP 2) Extra vars
 - name: Test API Call
-  hosts: "{{ hostname }}"  # To be tested with extra variables?
+  hosts: localhost  # To be tested with extra variables?
   gather_facts: false
 
   tasks:
@@ -9,6 +9,8 @@
       ansible.builtin.debug: 
         msg:
           - "Confirming API works"
+      vars:
+        ansible_host: "{{ hostname }}"
       ignore_errors: true
 
     - name: Test incoming extra variables
@@ -17,10 +19,15 @@
           - "Variable_1 = {{ extra_var_1 }}"
           - "Variable_2 = {{ extra_var_2 }}"
           - "Variable_3 = {{ extra_var_3 }}"
+      vars:
+        ansible_host: "{{ hostname }}"
       ignore_errors: true
+
 
     - name: Printing something
       ansible.builtin.debug: 
         msg:
           - "End of tests tasks"
+      vars:
+        ansible_host: "{{ hostname }}"
       ignore_errors: true

@@ -15,7 +15,7 @@ api_url = f"{aap_url}/api/v2/job_templates/"
 extra_vars = {
     "extra_var_1": "Extra Var #1 here",
     "extra_var_2": "Extra Var #1 here",
-    "extra_var_3": "Extra Var #3 here"
+    "hostname": "sexyguy.alpha.home"
 }
 
 
