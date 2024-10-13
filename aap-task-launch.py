@@ -12,6 +12,12 @@ job_template_name='00_appc-network-fortios-config-backup'
 
 api_url = f"{aap_url}/api/v2/job_templates/"
 
+extra_vars = {
+    "extra_var_1": "Extra Var #1 here",
+    "extra_var_2": "Extra Var #1 here",
+    "extra_var_3": "Extra Var #3 here"
+}
+
 
 # Headers for the request
 headers = {
@@ -19,14 +25,9 @@ headers = {
     "Content-Type": "application/json"
 }
 
-# Data payload for launching the job template (optional)
+# Payload with extra variables
 payload = {
-    # Pass extra_vars or other launch options if needed
-    "extra_vars": {
-        "extra_var_1": "Extra Var #1 here",
-        "extra_var_2": "Extra Var #1 here",
-        "extra_var_3": "Extra Var #3 here"
-    }
+    "extra_vars": extra_vars
 }
 
 def get_job_template_id():
